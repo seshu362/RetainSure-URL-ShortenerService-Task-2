@@ -4,9 +4,10 @@
 
 A simple URL shortening service similar to Bitly or TinyURL. This Flask-based application supports shortening long URLs, redirection using short codes, and basic analytics such as click counts and timestamps. It uses **in-memory thread-safe storage**, making it ideal for learning and testing.
 
----
 
 ## 📁 Project Structure
+
+```
 
 url-shortener/
 ├── app/
@@ -21,9 +22,7 @@ url-shortener/
 ├── requirements.txt # Python dependencies (Flask, pytest)
 ├── CHANGES.md # Change log (optional)
 └── README.md # This file
-
-
----
+```
 
 ## 🚀 Features
 
@@ -36,15 +35,12 @@ url-shortener/
 - Clean architecture and modular code
 - Includes test cases using pytest
 
----
 
 ## ✅ Requirements
 
 - Python 3.8 or above
 - Flask
 - Pytest
-
----
 
 ## ⚙️ Setup Instructions
 
@@ -88,48 +84,3 @@ source venv/bin/activate
 ```
     pytest
 ```
-🧠 API Endpoints
-1. Health Check
-http
-Copy
-Edit
-GET /
-2. Shorten a URL
-http
-Copy
-Edit
-POST /api/shorten
-Request Body:
-json
-Copy
-Edit
-{ "url": "https://www.example.com" }
-Response:
-json
-Copy
-Edit
-{
-  "short_code": "abc123",
-  "short_url": "http://localhost:5000/abc123"
-}
-3. Redirect to Original URL
-http
-Copy
-Edit
-GET /<short_code>
-Redirects to the original long URL. Returns 404 if the short code is invalid.
-
-4. Get URL Analytics
-http
-Copy
-Edit
-GET /api/stats/<short_code>
-Response:
-json
-Copy
-Edit
-{
-  "url": "https://www.example.com",
-  "clicks": 5,
-  "created_at": "2024-01-01T10:00:00Z"
-}
